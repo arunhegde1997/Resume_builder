@@ -1,6 +1,11 @@
 <template>
-     <lightning-card  title ="Skills" icon-name="standard:opportunity"></lightning-card>
-<lightning-input type="text" label="Skills"></lightning-input>
-    <lightning-button variant="brand-outline" label="" title="Primary action with lighter look" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
-    
+     <lightning-card  title ="Skills" icon-name="standard:opportunity" >
+      <template for:each ={skills} for:item="skill" for:index="index">
+        <div key={skill.id}>
+            <lightning-input type="text" label="Skills"  value={skill.name} onchange={handleSkillChange} data-index={index}></lightning-input>
+      </div>
+        </template>
+    <lightning-button variant="brand-outline" label="Add skills" title="Primary action with lighter look"
+     onclick={addSkills} class="slds-m-left_x-small"></lightning-button>
+    </lightning-card>
 </template>

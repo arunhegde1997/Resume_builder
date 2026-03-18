@@ -1,0 +1,42 @@
+<template>
+    <div>
+         <h2>{personalInfo.fullName}</h2>
+    <p>{personalInfo.email} | {personalInfo.phone} | {personalInfo.address}</p>
+    </div>
+
+    <div>
+        <h2>Education</h2>
+        <template for:each ={educations} for:item ="education" for:index ="index">
+        <div key = {education.id}>
+        <p><strong>{education.degree}</strong></p>
+        <p>{education.institute}</p>
+        <p>{education.year}</p>
+      </div>
+    </template>
+    </div>
+
+    <div>
+        <h2>Work Experience</h2> 
+        <template for:each ={workExperience} for:item ="workExperience" for:index ="index">
+        <div key = {workExperience.id}>
+        <p><strong>{workExperience.title},{workExperience.name}</strong></p>
+        <p>{workExperience.startDate} - {workExperience.endDate}</p>
+        
+      </div>
+    </template>
+    </div>
+
+    <div>
+        <h2>Skills</h2>
+         <template for:each ={skills} for:item ="skill" for:index ="index">
+        <li key = {skill.id}>{skill.name}</li>      
+   </template>
+    </div>
+
+   <div>
+    <h2> Summary</h2>
+    <p>{summary}</p>
+
+   </div>
+    
+</template>
